@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Head from "next/head";
 
 import ResultsTitle from "../../components/events/results-title";
 import EventList from "../../components/events/event-list";
@@ -38,6 +39,13 @@ const FilteredEventsPage = (props) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>Filtered Events | NextEvents</title>
+        <meta
+          name="description"
+          content={`All events for ${props.date.month}/${props.date.year}`}
+        />
+      </Head>
       <ResultsTitle date={date} />
       <EventList items={filteredEvents} />
     </Fragment>
